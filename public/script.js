@@ -5,7 +5,7 @@ let firstCam = document.querySelector('#myvid');
 //functions
 function camSwitch(){
     if (firstCam && secondCam){
-        secondCam = firstCam;
+        document.querySelector(".gamevideo").replaceChild(secondCam, firstCam);
     } else{
         return firstCam;
     }
