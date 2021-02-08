@@ -7642,7 +7642,6 @@ navigator.mediaDevices.getUserMedia({ video: true, audio: true })
 
     })
     .catch(err => document.write(err))
-
 checkboxTheme.addEventListener('click', () => {
     if (checkboxTheme.checked == true) {
         document.body.style.backgroundColor = '#212529'

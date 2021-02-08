@@ -1,24 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Alatsi&family=Coda+Caption:wght@800&display=swap');
+
+
+body{
+    background-color: #e4e4e4;
+    width: 100%;
+}
+
+h1{
+    font-family: 'Coda Caption', sans-serif;
+}
+
+.container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    flex-direction: column;
+    margin: auto;
+    border: 6px solid #fff;
+    border-radius: 6px;
+    position: relative;
+    top: 27px;
+}
+.left, .right{
+    display: flex;
+    flex-direction: column;
+    background-color: #aaaaaa;
+    width: 20%;
+}
+
+.left{
+    border-right: 2px solid #fff;
+}
+.right{
+    border-left: 2px solid #fff;
+}
+
+#arraw{
+    font-size: 50px;
+    color: crimson;
+}
+
+#title{
+    font-size: 6rem;
+    font-weight: 700;
+    font-family: 'Alatsi', sans-serif;
+    display: inline;
+}
+
+#twenty{
+    font-size: 4rem;
+    font-weight: 500;
+    font-family: 'Coda Caption', sans-serif;
+}
+
+.themain{
+    display: inline-flex;
+}
+
+#count{
+    width: 154px;
+    height: 150px;
+    position: relative;
+    left: 34px;
+    top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #bbbbbb;
+    border: 1px solid #9e9e9e;
+    border-radius: 50%;
+}
+
+input#theme {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 23px;
+}
+
+video#myvid {
+    width: 73%;
+    position: relative;
+    left: 25%;
+    top: 20px;
+    border-radius: 4%;
+}
+
+#howtoplay{
+    width: 156px;
+    height: 50px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.top-container {
+    position: relative;
+    background-color:#898b8a;
+    height: 168px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 3px;
+}
+
+.april{
+    position: relative;
+    background-color:#888B8A;
+    height: 116px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 3px;
+}
+
+
+
+.darktheme {
+    position: relative;
+    left: 22%;
+}
+
+.topdiv{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lysol{
+    width: 60%;
+    background-color: #ccc;
+}
+
+.middle {
+    display: inline-flex;
+    width: 100%;
+    background-color: #d3e0ea;
+    height: 639px;
+}
+
+.gamebox {
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+    position: relative;
+    top: 118px;
+}
+
+.april{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bottomlayer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 236px;
+    margin: 12px;
+    height: 50px;
+    background-color: #9e9e9e;
+    cursor: pointer;
+    color: #fff;
+}
+
+.gameplay{
+    width: 300px;
+    height: 150px;
+    border: 1px solid #898b8a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: xx-large;
+}
+
 video {
     transform: rotateY(180deg); 
-}
-
-.select {
-    height: 30px;
-}
-
-.h-90 {
-    height: 90% !important;
-}
-
-.h-10 {
-    height: 10% !important;
 }
 
 #peerVideo:hover {
     opacity: 0.6;
     cursor: pointer;
 }
-
 .centered {
     position: absolute;
     top: 50%;

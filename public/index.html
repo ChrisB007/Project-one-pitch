@@ -1,51 +1,65 @@
 <html>
-
 <head>
     <title>Video Chat App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="main.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="row h-10 w-100">
-            <div class="col">
-                <select id="filter" class="w-100 bg-dark text-light ml-2 mt-2 select font-weight-bold border">
-                    <option value="none">Normal</option>
-                    <option value="grayscale(100%)">B & W</option>
-                    <option value="sepia(100%)">Old School</option>
-                    <option value="contrast(150%)">Lumination</option>
-                    <option value="blur(20px)">Hidden Mist</option>
-                    <option value="invert(100%)">Dracula</option>
-                    <option value="hue-rotate(180deg">X-men Beast</option>
-                    <option value="saturate(25)">Super Saiyan God</option>
-                </select>
-            </div>
-            <div class="col">
-                <div class="float-right mt-3">
-                    <input class="form-check-input" type="checkbox" id="theme">
-                    <label class="form-check-label" for="theme">
+    <div class="container">
+        <section class="top-container">
+            <div class="topdiv">
+                <div><p id="title">GuessNTime</p></div>
+                <div class="darktheme">
+                    <input class="" type="checkbox" id="theme">
+                    <label class="" for="theme">
                         Dark Theme
                     </label>
+                    <span id="howtoplay">How to play</span>
                 </div>
             </div>
-        </div>
-        <div class="row h-90 w-100">
-            <div class="col-12 col-sm-6 d-flex justify-content-center">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <video class="embed-responsive-item" muted></video>
+        </section>
+        <section class="middle">
+            <div id="left" class="left"></div>
+            <div class="lysol">
+                <div class="">
+                    <div class="">
+                        <div id="filter" class="">
+                        </div>
+                    </div>
+                    <div class="">
+                        
+                    </div>
+                </div>
+                <div class="themain">
+                    <div id="count"><span id="twenty">20</span><span id="arraw">⇣</span></div>
+                    <div class="">
+                        <div class="gamevideo">
+                            <video id="myvid" class="ourvid" muted></video>
+                        </div>
+                    </div>
+                    <div class="othervideo">
+                        <div id="peerDiv" class="">
+                        </div>
+                    </div>
+                </div>
+                <div class="gamebox">
+                    <div class="gameplay">GameBox</div>
+                    <div class="gameplay">ClueBox</div>
                 </div>
             </div>
-            <div class="col-12 col-sm-6 d-flex justify-content-center">
-                <div id="peerDiv" class="embed-responsive embed-responsive-16by9">
-                </div>
-            </div>
-        </div>
+            <div id="right" class="right"></div> 
+        </section>
+        <section class="april">
+            <div id="firstcol" class="bottomlayer"><p>Player One</p></div>
+            <div id="ssecondcol" class="bottomlayer"><p>Start | Pause</p></div>
+            <div id="thirdcol" class="bottomlayer"><p>Player Two</p></div>
+        </section>
     </div>
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="bundle.js"></script>
+    <script src="./script.js"></script>
 </body>
 
 </html>
