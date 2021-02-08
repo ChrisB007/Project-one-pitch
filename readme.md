@@ -8,7 +8,7 @@ to guess correctly without sufficient information. The first player **MUST NOT**
 the object shown in the image by its name or keyword, instead he/she has to associate it by reference (with other objects)or by action.
 
 ##Game Rules</br>
-1. Do not callout or disclose the objects in the image by its name or keyword<br>
+1. Do not callout or disclose the object in the image by its name or keyword<br>
 2. You can ONLY reference the object in the image to other objects or by acting it out.<br>
 3. A complete game consists of six turns for each player.<br>
 4. Each player has 20 seconds to describe/ guess the image/word in each turn.<br>
