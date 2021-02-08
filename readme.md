@@ -25,7 +25,7 @@ Players can choose to pause the game at any time during the game.<br>
 
 ## Related images
 
-[wireframe](public/images/Screen Shot 2021-02-08 at 12.52.57 AM.png)
+![alt wireframe](public/images/Screen Shot 2021-02-08 at 12.52.57 AM.png)
 
 
 ## User Stories
