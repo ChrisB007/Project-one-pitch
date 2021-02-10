@@ -9,6 +9,7 @@ let replacement = document.querySelector("#replacediv");
 let hidePlayers1 = document.querySelector("#player1");
 let hidePlayers2 = document.querySelector("#player2");
 let form = document.querySelector("form");
+let pOneInput, pTwoInput;
 
 
 /*Functions & EventHandlers*/
@@ -22,7 +23,7 @@ function start(){
     button.addEventListener("click", (e)=>{
         e.preventDefault();
         button.classList.add("hideme");
-        replacement.textContent = "Enter a number between 1 & 10";
+        replacement.textContent = "Enter a number. Player with the highest number starts the game.";
         hidePlayers1.classList.add("hideme");
         hidePlayers2.classList.add("hideme");
         replace.classList.remove("hideme");
@@ -34,41 +35,88 @@ start();
 
 
 function calc(){
-    // Target input's value
+    // Target input's value and get values from input on click
     let firstButton = document.getElementById("button1");
     let secondButton = document.getElementById("button2");
-    let pOneInput, pTwoInput;
+    
 
-    //Goal is to get values from input
+
     firstButton.addEventListener("click", (e)=>{
         let firstInput = document.getElementById("first-input").value;
         if (firstInput != parseInt(firstInput)){
-            console.log("NAN");
             alert("Please enter a number");
+            // if (parseInt(firstInput) < 1 || parseInt(firstInput) > 10){
+            //     alert("Please enter a number between 1 and 10");
+
+            // }//check if number is > 10 || < than 1;
         } else{
-            console.log(firstInput);
             pOneInput = firstInput;
+            compareInput();
+            // console.log(pOneInput);
         }
     });
+
+    
 
     secondButton.addEventListener("click", (e)=>{
         let secondInput = document.getElementById("sec-input").value;
         if (secondInput != parseInt(secondInput)){
-            console.log("NAN");
             alert("Please enter a number");
         } else{
-            console.log(secondInput);
             pTwoInput = secondInput;
+            compareInput();
+            //  console.log(secondInput);
         }
     });
-
-    // Select values from input.
-
-    console.log(pOneInput, pTwoInput);
-
-
-
-    // Compare values to see which is higher
     
 }
 calc();
+
+
+//Game Logic
+
+function compareInput(){
+    if (pOneInput && pTwoInput){
+        if (typeof pOneInput !== "undefined" && typeof pTwoInput !== "undefined" ){
+            if (pOneInput === pTwoInput){
+                replacement.textContent = `This is a tie - Player One entered: ${pOneInput}, Player Two entered: ${pTwoInput}`;
+                console.log("This is a tie");
+            } else if (pOneInput > pTwoInput){
+                replacement.textContent = `Player One starts the game - Player One entered: ${pOneInput}, Player Two entered: ${pTwoInput}`;
+                console.log("Player One starts the game");
+            } else if (pOneInput < pTwoInput){
+                replacement.textContent = `Player Two starts the game - Player One entered: ${pOneInput}, Player Two entered: ${pTwoInput}`;
+                console.log("Player Two starts the game");
+            }
+        }
+    } else if (typeof pOneInput !== "undifined" || typeof pTwoInput === "undifined"){
+        replacement.textContent = "Waiting for the other player to enter a number";
+        console.log("Waiting for the other player to enter a number");
+    } else if (typeof pTwoInput !== "undifined" || typeof pOneInput === "undifined"){
+        replacement.textContent = "Waiting for the other player to enter a number";
+        console.log("Waiting for the other player to enter a number");
+    }
+};
+
+
+// If P1 and P2 does not !== undefined
+    // If p1 === p2 console.log tie
+    //else if p1 > p2 console.log player 1's turn
+    // else if p1 < p2 conssole.log player 2's turn
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

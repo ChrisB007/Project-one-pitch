@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Alatsi&family=Coda+Caption:wght@800&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@800&display=swap');
 
 body{
-    background-color: #e4e4e4;
+    background-image: linear-gradient(to right top, #c0c2c4, #999c9d, #757777, #535554, #343433);
     width: 100%;
 }
 
@@ -17,7 +16,7 @@ h1{
     width: 70%;
     flex-direction: column;
     margin: auto;
-    border: 6px solid #fff;
+    border: 6px solid #757373;
     border-radius: 6px;
     position: relative;
     top: 27px;
@@ -44,10 +43,19 @@ h1{
 }
 
 #title{
-    font-size: 6rem;
+    font-size: 5em;
     font-weight: 700;
     font-family: 'Alatsi', sans-serif;
     display: inline;
+}
+
+#make-circle{
+    background-color: rgba(62, 61, 61, 0.612);
+    border: black 1px solid;
+    border-radius: 27%;
+    padding: 3px;
+    color: #fff;
+    font-size: smaller;
 }
 
 #twenty{
