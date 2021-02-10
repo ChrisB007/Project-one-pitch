@@ -51,9 +51,24 @@
             <div id="right" class="right"></div> 
         </section>
         <section class="april">
-            <div id="firstcol" class="bottomlayer"><p>Player One</p></div>
-            <div id="ssecondcol" class="bottomlayer"><p>Start | Pause</p></div>
-            <div id="thirdcol" class="bottomlayer"><p>Player Two</p></div>
+            <div id="firstcol" class="bottomlayer">
+                <p id="player1" class="goaway">Player One</p>
+                <div id="firstformdiv" class="formdiv">
+                        <input id="first-input" type="text" value="">
+                        <input id="button1" type="button" value="Submit">
+                </div>
+            </div>
+            <span id="replacediv"><div id="secondcol" class="bottomlayer" href="#modal"><p id="starpause">Start | Pause</p></div></span>
+            <div id="thirdcol" class="bottomlayer">
+                <p id="player2"  class="goaway">Player Two</p>
+                <div id="secformdiv"  class="formdiv">
+                        <input id="sec-input" type="text" value="" class="form-input">
+                        <input id="button2" type="button" value="Submit">
+                </div>
+            </div>
+        </section>
+        <section id="qform" class="form">
+            
         </section>
     </div>
 
@@ -61,5 +76,4 @@
     <script src="bundle.js"></script>
     <script src="./script.js"></script>
 </body>
-
 </html>

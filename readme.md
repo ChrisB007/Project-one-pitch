@@ -44,6 +44,10 @@ Players can choose to pause the game at any time during the game.<br>
 3. If Player1 barstack is equal to 6, player1 wins.<br>
     If Player2 barstack is equal to 6, player2 wins.<br>
 
+## MVP
+* On load, I get prompted to enter a number between 1 - 10.
+
+
 
 
 ## Developer Documentation (Demo)
