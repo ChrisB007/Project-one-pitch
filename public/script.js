@@ -43,7 +43,8 @@ function calc(){
     firstButton.addEventListener("click", (e)=>{
         let firstInput = document.getElementById("first-input").value;
         if (firstInput != parseInt(firstInput)){
-            console.log("NAN")
+            console.log("NAN");
+            alert("Please enter a number");
         } else{
             console.log(firstInput);
             pOneInput = firstInput;
@@ -53,13 +54,14 @@ function calc(){
     secondButton.addEventListener("click", (e)=>{
         let secondInput = document.getElementById("sec-input").value;
         if (secondInput != parseInt(secondInput)){
-            console.log("NAN")
+            console.log("NAN");
+            alert("Please enter a number");
         } else{
             console.log(secondInput);
             pTwoInput = secondInput;
         }
     });
-    
+
     // Select values from input.
 
     console.log(pOneInput, pTwoInput);
