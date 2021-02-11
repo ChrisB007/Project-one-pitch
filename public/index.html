@@ -53,6 +53,7 @@
                         <input id="first-input" type="text" value="">
                         <input id="button1" type="button" value="Submit">
                 </div>
+                <p id="playeronetextbox"></p>
             </div>
             <span id="replacediv"><div id="secondcol" class="bottomlayer" href="#modal"><p id="starpause">Start | Pause</p></div></span>
             <div id="thirdcol" class="bottomlayer">
@@ -61,15 +62,30 @@
                         <input id="sec-input" type="text" value="" class="form-input">
                         <input id="button2" type="button" value="Submit">
                 </div>
+                <p id="playertwotextbox"></p>
             </div>
         </section>
         <section id="qform" class="form">
-            
+            <!-- The Modal -->
+                <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div id="modalsec" class="modal-content">
+                        <span class="close">&times;</span>
+                        <div>
+                            <p class="modalclass1">Select One</p>
+                            <span id="playeronemodal" class="modalclass2"><input id="playerradione" name="payerchoice" type="radio" value="Player One">Player One<br></span>
+                            <span id="playertwomodal" class="modalclass2"><input id="playerradiotwo" name="payerchoice" type="radio" value="Player Two">Player Two<br></span>
+                            <span id="playmod" class="modalclass2"><input name="payerchoice" type="submit" value="Submit"></span>
+                        </div>
+                    </div>
+                </div>
         </section>
     </div>
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="bundle.js"></script>
     <script src="./script.js"></script>
+    <script src="./modal.js"></script>
 </body>
 </html>
