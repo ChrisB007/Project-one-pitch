@@ -91,11 +91,13 @@ input#theme {
 }
 
 video#myvid {
-    width: 73%;
+    width: 554px;
     position: relative;
-    left: 25%;
+    height: 366px;
+    left: 13%;
     top: 20px;
     border-radius: 4%;
+    background-color: rgb(32, 32, 32);
 }
 
 #howtoplay{
@@ -259,6 +261,7 @@ span#replacediv {
     justify-content: center;
 }
 
+
 /*Modal*/
 
 /* The Modal (background) */
@@ -325,5 +328,8 @@ span#playmod input {
 
 .none{
     display: none;
+}
+.modposition{
+    position: relative;
 }
 

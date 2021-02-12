@@ -27,17 +27,17 @@
                         
                     </div>
                 </div>
-                <div class="themain">
+                <div class="themain">  <!--Flip box-->
                     <div id="count"><span id="twenty">20</span><span id="arraw">⇣</span></div>
                     <div class="">
                         <div class="gamevideo">
                             <video id="myvid" class="ourvid" muted></video>
                         </div>
                     </div>
-                    <div class="othervideo">
+                    <!-- <div class="othervideo">
                         <div id="peerDiv" class="">
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="gamebox">
                     <div class="gameplay">GameBox</div>
@@ -73,18 +73,28 @@
                     <div id="modalsec" class="modal-content">
                         <span class="close">&times;</span>
                         <div>
-                            <p class="modalclass1">Select One</p>
-                            <span id="playeronemodal" class="modalclass2"><input id="playerradione" name="payerchoice" type="radio" value="Player One">Player One<br></span>
-                            <span id="playertwomodal" class="modalclass2"><input id="playerradiotwo" name="payerchoice" type="radio" value="Player Two">Player Two<br></span>
-                            <span id="playmod" class="modalclass2"><input name="payerchoice" type="submit" value="Submit"></span>
+                            <h2 class="modalclass1">Rules</h2>
+                            <span id="playeronemodal" class="modalclass2">This is a single player game and the rules are pretty simple<br></span>
+                            <span id="playertwomodal" class="modalclass2">Your mission, if you choose to accept:</span>
+                            <span id="playertwomodal" class="modalclass2">
+                                <ul>
+                                    <li>Provide the computer enough clues to guess correctly the image(s) you are shown in 30 seconds or less.</li>
+                                    <li>Your answers can be a "Yes" or "No".</li>
+                                    <li>You must not say the name of what's in the image.</li>
+                                    <li>If you must, you may use the "Clue box".</li>
+                                    <li>The computer scores point each time it fails to guess correctly.</li>
+                                    <li>You score points each time you help the computer guess the image(s) correctly.</li>
+                                </ul><br>
+                            <br></span>
+                            <span id="playmod" class="modalclass2"><input id="letsgo" name="payerchoice" type="submit" value="Let's Go!"></span>
                         </div>
                     </div>
                 </div>
         </section>
     </div>
 
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="bundle.js"></script>
+    <!-- <script src="/socket.io/socket.io.js"></script>
+    <script src="bundle.js"></script> -->
     <script src="./script.js"></script>
     <script src="./modal.js"></script>
 </body>
