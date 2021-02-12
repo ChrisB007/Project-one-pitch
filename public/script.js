@@ -24,19 +24,29 @@ async function Images(){
         let getCat = await  fetch(`https://pixabay.com/api/?key=${API_KEY}&category=people&pretty=true`);
         let getData = await fetch(`https://pixabay.com/api/videos/?key=${API_KEY}&q=zoo+animals&pretty=true`);
         let catJSON = await getCat.json();
-        let imgJSON = await getData.json();
+        let vidJSON = await getData.json();
 
-        let catdata = catJSON.hits;
-        let imgdata = imgJSON.hits;
+        let imgdata = catJSON;
+        let viddata = vidJSON;
 
-        let newdata = [...catdata, ...imgdata]; //merge APIs
-        
-        for (let i = 0; i < newdata.length; i++){
-            let vids = newdata;
-            
-            console.log(vids[i]);
-            // hits[0].videos.tiny.url
+        // let newdata = [...catdata, ...imgdata]; //merge APIs
+
+        console.log("videos", viddata.hits[0].videos.tiny.url);
+
+        // console.log(catdata.hits[2].videos.tiny.url)
+        console.log("photos", imgdata.hits[2].webformatURL);
+
+        // newdata[1].hits[0].videos.tiny.url
+
+        for(let y=0; y < viddata.length; y++){
+            console.log(viddata.hits[y].videos.tiny.url)
         }
+
+        
+        for (let i = 0; i < imgdata.length; i++){
+            console.log(imgdata.hits[i].webformatURL);
+        }
+        
 
     } catch(err){
         console.log(err);
@@ -83,12 +93,24 @@ function gameStart(){
         let count = guessCount.textContent; // 
         console.log(`This is ${count}`);
 
-        let countTime = setTimeout(()=>{
-            for(let i = 0; i = count.length; i-- ){
-
-            }
-        }, 30000)
+        animateValue(`${count}`, 30, 0, 30000);
     });
 }
 gameStart();
+
+function animateValue(id, start, end, duration) {
+    if (start === end) return;
+    var range = end - start;
+    var current = start;
+    var increment = end > start? 1 : -1;
+    var stepTime = Math.abs(Math.floor(duration / range));
+    var obj = document.getElementById(id);
+    var timer = setInterval(function() {
+        current += increment;
+        obj.innerHTML = current;
+        if (current == end) {
+            clearInterval(timer);
+        }
+    }, stepTime);
+}
 
