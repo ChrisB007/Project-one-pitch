@@ -1,32 +1,24 @@
 /*Selecting the DOM*/
+let playerOne = document.querySelector("#player1");
+let playerTwo = document.querySelector("#player2");
 let button = document.querySelector('#modalsec');
-let replace = document.querySelector("#firstformdiv");
-let replace2 = document.querySelector("#secformdiv");
 let clickStart = document.querySelector("#letsgo");
 let modalContent = document.querySelector("#modalsec");
 let modalBg = document.querySelector("#myModal");
 let API_KEY = "20243707-909ee3b566e94a50bc75fcf13";
+let gamesRules = document.querySelector("#starpause");
+let guessCount = document.querySelector("#twenty");
+
+
+// Set variables
+
+guessCount.textContent = 30;
 
 
 
 /*Functions & EventHandlers*/
 
- //Handles the initial clicks
-function start(){
-    //hides the forms
-    replace.classList.add("hideme");
-    replace2.classList.add("hideme");
-
-    //button opens up the modal
-    clickStart.addEventListener("click", (event)=>{
-        console.log("Lets go - just got click");
-        modalContent.classList.add("none");
-        modalBg.classList.add("modposition");
-
-}, false);
-}
-start();
-
+//Fetch API
 async function Images(){
     try{
         let getCat = await  fetch(`https://pixabay.com/api/?key=${API_KEY}&category=people&pretty=true`);
@@ -37,14 +29,12 @@ async function Images(){
         let catdata = catJSON.hits;
         let imgdata = imgJSON.hits;
 
-        let newdata = [...catdata, ...imgdata];
+        let newdata = [...catdata, ...imgdata]; //merge APIs
         
         for (let i = 0; i < newdata.length; i++){
-            let vids = newdata[i];
-
+            let vids = newdata;
             
-            
-            console.log(vids);
+            console.log(vids[i]);
             // hits[0].videos.tiny.url
         }
 
@@ -54,110 +44,51 @@ async function Images(){
 }
 Images();
 
+//On page load
+function randomImages(){
+    let imageContainer = document.querySelector("#myvid");
+    let pathToImage = `public/images/img/`;
+    let createImg = document.createElement('img');
 
+    for(let i = 1; i < 8; i++){
+        let imgChild = imageContainer.appendChild(createImg);
+        imgChild.src = `${pathToImage}${[i]}.jpg`;
+        imgChild.setAttribute("class", "imageslider");
+        // imgChild.src++;
+        console.log(imgChild);
+    }
 
+}
+randomImages();
 
+ //Handle the initial clicks
+function start(){
+    //button opens up the modal
+    clickStart.addEventListener("click", (event)=>{
+        console.log("Lets go - just got click");
+        modalContent.classList.add("none");
+        modalBg.classList.add("modposition");
+        button.classList.add("none");
+        gamesRules.textContent = "Start Game";
+        playerOne.textContent = "You";
+        playerTwo.textContent = "Your Computer";
+        document.querySelector("#secondcol").classList.add("green");
+    }, false);
+}
+start();
 
+function gameStart(){
+    gamesRules.addEventListener("click", ()=>{
+        gamesRules.textContent = "Pause Game";
+        let count = 20;
+        guessCount.innerHTML = "Thissss";
 
+        let countTime = setTimeout(()=>{
+            for(let i = 0; i = count.length; i-- ){
 
-// function selectPlayer(){
-
-//     var playerSelected = document.getElementsByName("payerchoice");
-
-//     pickingPlayer.addEventListener("click", ()=>{
-//         for (let i = 0; i < playerSelected.length; i++){
-//             if (playerSelected[i].checked && playerSelected[i].value === "Player One"){
-//                 pOneTextBox.textContent = `You are ${playerSelected[i].value}`;
-//                 replace.classList.remove("hideme");
-//                 radioTwo.disabled = true;
-//                 modalDisplay.classList.add("none");
-//                 replacement.textContent = "Enter a number. Player with the highest number starts the game.";
-//             } else if(playerSelected[i].checked && playerSelected[i].value === "Player Two"){
-//                 pTwoTextBox.textContent = `You are ${playerSelected[i].value}`;
-//                 replace2.classList.remove("hideme");
-//                 // document.querySelector("#first-input").disabled = true;
-//                 modalDisplay.classList.add("none");
-//                 replacement.textContent = "Enter a number. Player with the highest number starts the game.";
-//             }
-//         }
-//     }, false);
-// };
-
-
-
-// function calc(){
-//     // Target input's value and get values from input on click
-//     let firstButton = document.getElementById("button1");
-//     let secondButton = document.getElementById("button2");
-
-//     firstButton.addEventListener("click", (e)=>{
-//         let firstInput = document.getElementById("first-input").value;
-//         if (firstInput != parseInt(firstInput)){
-//             alert("Please enter a number");
-//         } else{
-//             pOneInput = firstInput;
-//             compareInput();
-//         }
-//     }, false);
-
-    
-
-//     secondButton.addEventListener("click", (e)=>{
-//         let secondInput = document.getElementById("sec-input").value;
-//         if (secondInput != parseInt(secondInput)){
-//             alert("Please enter a number");
-//         } else{
-//             pTwoInput = secondInput;
-//             compareInput();
-//         }
-//     }, false);
-    
-// }
-// calc();
-
-
-// //Game Logic
-
-// function compareInput(){
-//     if (pOneInput && pTwoInput){
-//         if (typeof pOneInput !== "undefined" && typeof pTwoInput !== "undefined" ){
-//             if (pOneInput === pTwoInput){
-//                 replacement.textContent = `This is a tie - [Player One entered: ${pOneInput}] [Player Two entered: ${pTwoInput}]`;
-//                 console.log("This is a tie");
-//             } else if (pOneInput > pTwoInput){
-//                 replacement.textContent = `Player One starts the game - [Player One entered: ${pOneInput}] [Player Two entered: ${pTwoInput}]`;
-//                 console.log("Player One starts the game");
-//             } else if (pOneInput < pTwoInput){
-//                 replacement.textContent = `Player Two starts the game - [Player One entered: ${pOneInput}] [Player Two entered: ${pTwoInput}]`;
-//                 console.log("Player Two starts the game");
-//             }
-//         }
-//     } else if (typeof pOneInput !== "undifined" || typeof pTwoInput === "undifined"){
-//         replacement.textContent = "Waiting for the other player to enter a number";
-//         console.log("Waiting for the other player to enter a number");
-//     } else if (typeof pTwoInput !== "undifined" || typeof pOneInput === "undifined"){
-//         replacement.textContent = "Waiting for the other player to enter a number";
-//         console.log("Waiting for the other player to enter a number");
-//     }
-// };
-
-
-
-// function startButton(){
-// // function for the start button
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            }
+        }, 30000)
+    });
+}
+gameStart();
 

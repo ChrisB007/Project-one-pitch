@@ -28,10 +28,15 @@
                     </div>
                 </div>
                 <div class="themain">  <!--Flip box-->
-                    <div id="count"><span id="twenty">20</span><span id="arraw">⇣</span></div>
+                    <div id="count">
+                        <span><p id="twenty"></p></span>
+                        <span id="arraw">⇣</span>
+                    </div>
                     <div class="">
                         <div class="gamevideo">
-                            <video id="myvid" class="ourvid" muted></video>
+                            <div id="myvid" class="ourvid" muted>
+                                
+                            </div>
                         </div>
                     </div>
                     <!-- <div class="othervideo">
@@ -40,8 +45,13 @@
                     </div> -->
                 </div>
                 <div class="gamebox">
-                    <div class="gameplay">GameBox</div>
-                    <div class="gameplay">ClueBox</div>
+                    <div class="gameplay">
+                        <div class="guessresponse">
+                            <p id="guessdisplay">Provide clues to these questions</p>
+                            <input type="text" value="" id="respondto" placeholder="Enter your response"/>
+                            <input type="button" value="Submit" name="guesssubmit" id="submitguess">
+                        </div>
+                    </div>
                 </div>
             </div>
             <div id="right" class="right"></div> 
@@ -49,19 +59,12 @@
         <section class="april">
             <div id="firstcol" class="bottomlayer">
                 <p id="player1" class="goaway">Player One</p>
-                <div id="firstformdiv" class="formdiv">
-                        <input id="first-input" type="text" value="">
-                        <input id="button1" type="button" value="Submit">
-                </div>
                 <p id="playeronetextbox"></p>
             </div>
-            <span id="replacediv"><div id="secondcol" class="bottomlayer" href="#modal"><p id="starpause">Start | Pause</p></div></span>
+            <span id="replacediv"><div id="secondcol" class="bottomlayer" href="#modal"><p id="starpause">Game Rules</p></div></span>
+            <!-- <span id="replacebutton"><div id="secondbutton" class="bottomlayer"><p id="gamestart">Start Game</p></div></span> -->
             <div id="thirdcol" class="bottomlayer">
                 <p id="player2"  class="goaway">Player Two</p>
-                <div id="secformdiv"  class="formdiv">
-                        <input id="sec-input" type="text" value="" class="form-input">
-                        <input id="button2" type="button" value="Submit">
-                </div>
                 <p id="playertwotextbox"></p>
             </div>
         </section>
@@ -84,9 +87,11 @@
                                     <li>If you must, you may use the "Clue box".</li>
                                     <li>The computer scores point each time it fails to guess correctly.</li>
                                     <li>You score points each time you help the computer guess the image(s) correctly.</li>
-                                </ul><br>
+                                </ul>
                             <br></span>
-                            <span id="playmod" class="modalclass2"><input id="letsgo" name="payerchoice" type="submit" value="Let's Go!"></span>
+                            <span id="playmod" class="modalclass2">
+                                <input id="letsgo" name="payerchoice" type="submit" value="Let's Go!">
+                            </span>
                         </div>
                     </div>
                 </div>

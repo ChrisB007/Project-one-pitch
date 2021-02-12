@@ -90,14 +90,21 @@ input#theme {
     height: 23px;
 }
 
-video#myvid {
+div#myvid {
     width: 554px;
     position: relative;
     height: 366px;
     left: 13%;
     top: 20px;
     border-radius: 4%;
-    background-color: rgb(32, 32, 32);
+}
+
+.imageslider{
+    width: 554px;
+    height: 366px;
+    background-size: cover;
+    object-fit: cover;
+    border-radius: 25px;
 }
 
 #howtoplay{
@@ -193,15 +200,40 @@ p#playeronetextbox, p#playertwotextbox {
     color: #fff;
 }
 
-.gameplay{
-    width: 300px;
-    height: 150px;
-    border: 1px solid #898b8a;
+input#respondto {
+    width: 50%;
+    height: 50px;
+    margin: 9px;
+    border-radius: 8px;
+}
+input#respondto {
+    text-align: center;
+}
+input#submitguess {
+    width: 20%;
+    height: 41px;
+}
+.guessresponse {
     display: flex;
+    flex-direction: column;
+    width: 100%;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
+    position: relative;
+    bottom: 17px;
+}
+
+.gameplay {
+    width: 93%;
+    height: 186px;
+    border: 1px solid #898b8a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     font-size: xx-large;
+    position: relative;
+    bottom: 43px;
 }
 
 video {
@@ -223,7 +255,7 @@ video {
     visibility: hidden;
 }
 
-div#secondcol {
+div#secondcol, div#secondbutton{
     width: 271px;
     height: 100px;
 }
@@ -235,7 +267,7 @@ div#secondcol {
     bottom: 35px;
     left: 3px;
 }
-p#goone, p#gotwo, #starpause {
+p#goone, p#gotwo, #starpause, #gamestart {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -251,9 +283,13 @@ p#goone, p#gotwo, #starpause {
     position: relative;
     bottom: 35px;
 }
-span#replacediv {
+span#replacediv, span#replacebutton {
     font-size: x-large;
     color: #fff;
+}
+
+.green{
+    background-color: #374045;
 }
 
 .goaway{
