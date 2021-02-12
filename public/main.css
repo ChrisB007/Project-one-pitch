@@ -100,7 +100,7 @@ div#myvid {
 }
 
 .imageslider{
-    width: 554px;
+    width: 98%;
     height: 366px;
     background-size: cover;
     object-fit: cover;
