@@ -79,8 +79,9 @@ start();
 
 function gameStart(){
     gamesRules.addEventListener("click", ()=>{
-        gamesRules.textContent = "Pause Game";
-        let count = 20;
+        gamesRules.textContent = "Pause Game"; //Change start to pause
+        let count = guessCount.textContent; // 
+        console.log(`This is ${count}`);
 
         let countTime = setTimeout(()=>{
             for(let i = 0; i = count.length; i-- ){
