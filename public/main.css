@@ -68,18 +68,18 @@ h1{
     display: inline-flex;
 }
 
-#count{
-    width: 154px;
+#count {
+    width: 205px;
     height: 150px;
     position: relative;
-    left: 34px;
+    left: 11px;
     top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #bbbbbb;
     border: 1px solid #9e9e9e;
-    border-radius: 50%;
+    border-radius: 27%;
 }
 
 input#theme {
@@ -98,6 +98,31 @@ div#myvid {
     top: 20px;
     border-radius: 4%;
 }
+
+@property --num {
+    syntax: "<integer>";
+    initial-value: 30;
+    inherits: false;
+  }
+  
+  .thecount {
+    animation: counter 30s alternate ease-in-out;
+    counter-reset: num var(--num);
+    font: 800 35px system-ui;
+    padding: 1rem;
+  }
+  .thecount::after {
+    content: counter(num);
+  }
+  
+  @keyframes counter {
+    from {
+      --num: 30;
+    }
+    to {
+      --num: 0;
+    }
+  }
 
 .imageslider{
     width: 98%;

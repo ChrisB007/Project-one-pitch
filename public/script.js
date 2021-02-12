@@ -7,16 +7,21 @@ let modalContent = document.querySelector("#modalsec");
 let modalBg = document.querySelector("#myModal");
 let API_KEY = "20243707-909ee3b566e94a50bc75fcf13";
 let gamesRules = document.querySelector("#starpause");
+let gameStart = document.querySelector("#gamestart");
 let guessCount = document.querySelector("#twenty");
+let guessDisplay = document.querySelector("#guessdisplay");
+
+
 
 
 // Set variables
 
-guessCount.textContent = 30;
-
-
-
 /*Functions & EventHandlers*/
+
+function addCounter(){
+    let x = document.querySelector("#twenty").classList.add("thecount");
+}
+
 
 //Fetch API
 async function Images(){
@@ -54,6 +59,8 @@ async function Images(){
 }
 Images();
 
+
+
 //On page load
 function randomImages(){
     let imageContainer = document.querySelector("#myvid");
@@ -79,38 +86,25 @@ function start(){
         modalContent.classList.add("none");
         modalBg.classList.add("modposition");
         button.classList.add("none");
-        gamesRules.textContent = "Start Game";
-        playerOne.textContent = "You";
-        playerTwo.textContent = "Your Computer";
-        document.querySelector("#secondcol").classList.add("green");
     }, false);
 }
 start();
 
-function gameStart(){
-    gamesRules.addEventListener("click", ()=>{
-        gamesRules.textContent = "Pause Game"; //Change start to pause
-        let count = guessCount.textContent; // 
-        console.log(`This is ${count}`);
+function onStart(){
+    gameStart.addEventListener("click", ()=>{
+        let wordsArr = ["Am I alive", "Am I an animal", "Do I exist alone", "Can I be used", "Do I live in a zoo", "Can you spend me"]
+        document.querySelector("#secondbutton").classList.add("green");
+        playerOne.textContent = "Your Turn";
+        playerTwo.textContent = "Your Computer";
+        addCounter();
+        gameStart.textContent = "Pause Game";
 
-        animateValue(`${count}`, 30, 0, 30000);
-    });
-}
-gameStart();
+        for (let i = 0; i < wordsArr.length; i++){
+            guessDisplay.textContent = wordsArr[Math.floor(Math.random() * wordsArr.length)];
 
-function animateValue(id, start, end, duration) {
-    if (start === end) return;
-    var range = end - start;
-    var current = start;
-    var increment = end > start? 1 : -1;
-    var stepTime = Math.abs(Math.floor(duration / range));
-    var obj = document.getElementById(id);
-    var timer = setInterval(function() {
-        current += increment;
-        obj.innerHTML = current;
-        if (current == end) {
-            clearInterval(timer);
         }
-    }, stepTime);
+        
+    }, false);
 }
+onStart();
 
