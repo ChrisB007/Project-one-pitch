@@ -18,10 +18,13 @@ the object shown in the image by its name or keyword, instead he/she has to asso
 
 ## How To Play
 
-This game can only be played by two players at a time.<br>
-The first player starts the game by pushing the "Start / Pause" button.<br>
-As the counter goes down, the first player describes objects/ words shown while the second player guesses.<br>
-Players can choose to pause the game at any time during the game.<br>
+This game can only be played by one player.<br>
+Guess what image is behind the curtain in 30 seconds or less.<br>
+ As you continue to make progress, the timer gets shorter.<br>
+Your answer must be an exact word that describes the image<br>
+Click can click for "Clues"<br>
+The computer scores point each time you fail to guess correctly.<br>
+You score point each time you guess the image correctly.<br>
 
 ## Related images
 
