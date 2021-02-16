@@ -33,13 +33,10 @@ You score point each time you guess the image correctly.<br>
 
 ## User Stories
 
-0. Input Camera shows players.<br>
-    0a. Player bar stack starts at 0<br>
-1. Click 'Start | Pause' to begin game<br>
-    1a. Countdown begins (20sec).<br>
-    1b. Image / word is added to the "Game Box"<br>
+1. Click 'Start to begin game<br>
+    1a. Countdown begins (30sec).<br>
+    1b. Image loads "Game Box"<br>
     1c. Clue is added to the "Clue Box"<br>
-    1d. Player2's button is disabled.<br>
 2. If 'Countdown' reaches 'zero' and Guesses is not a match, Player switches turns.<br>
     2a. If Player1 wins the round, 'bar stack' is increamented by one. Player switches turns.<br>
     2b. If Player2 wins the round, Player2's 'bar stack' is increamented by one. Player switches turns.<br>
