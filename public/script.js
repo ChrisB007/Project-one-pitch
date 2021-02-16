@@ -131,7 +131,7 @@ function onStart(){
         myvidOnclick.classList.add("clickme");
 
         for (let i = 0; i < wordsArr.length; i++){
-            guessDisplay.textContent = wordsArr[Math.floor(Math.random() * wordsArr.length)];
+            guessDisplay.textContent = `Clue: ${wordsArr[Math.floor(Math.random() * wordsArr.length)]}`
         };
 
         // Loop over the API to display image(s)
