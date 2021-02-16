@@ -38,24 +38,35 @@ You score point each time you guess the image correctly.<br>
     1b. Image loads "Game Box"<br>
     1c. Clue is added to the "Clue Box"<br>
 2. If 'Countdown' reaches 'zero' and Guesses is not a match, Player switches turns.<br>
-    2a. If Player1 wins the round, 'bar stack' is increamented by one. Player switches turns.<br>
-    2b. If Player2 wins the round, Player2's 'bar stack' is increamented by one. Player switches turns.<br>
+    2a. If Player wins the round, 'bar stack' is increamented by one. Player switches turns.<br>
+    2b. If computer wins the round, Computer 'bar stack' is increamented by one. Player switches turns.<br>
     2c. Bar stacks are color coded from 'Red to Green'<br>
 3. If Player1 barstack is equal to 6, player1 wins.<br>
-    If Player2 barstack is equal to 6, player2 wins.<br>
+    If Computer barstack is equal to 6, Computer wins.<br>
 
 ## MVP
-* On load, I get prompted to enter a number between 1 - 10.
+
+1. Click 'Start to begin game<br>
+    1a. Countdown begins (30sec).<br>
+    1b. Image loads "Game Box"<br>
+    1c. Clue is added to the "Clue Box"<br>
+2. If 'Countdown' reaches 'zero' and Guesses is not a match, Player switches turns.<br>
+    2a. If Player wins the round, 'bar stack' is increamented by one. Player switches turns.<br>
+    2b. If computer wins the round, Computer 'bar stack' is increamented by one. Player switches turns.<br>
+    2c. Bar stacks are color coded from 'Red to Green'<br>
+3. If Player1 barstack is equal to 6, player1 wins.<br>
+    If Computer barstack is equal to 6, Computer wins.<br>
+
 
 
 
 
 ## Developer Documentation (Demo)
 
-Install dependencies - npm install<br>
+<!-- Install dependencies - npm install<br>
 Start - npm start<br>
 
 For development run watchify - npm run watch<br>
 
 Open localhost in two browser tabs for testing. On the same machine, don't open tabs in two different browsers as it will fail to provide camera access to 2 different applications(browsers) simultaneously.<br>
-Deploy it and open url in two separate devices for real-world usage.<br>
+Deploy it and open url in two separate devices for real-world usage.<br> -->
