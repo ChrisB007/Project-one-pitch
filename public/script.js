@@ -10,10 +10,8 @@ let gamesRules = document.querySelector("#starpause");
 let gameStart = document.querySelector("#gamestart");
 let guessCount = document.querySelector("#twenty");
 let guessDisplay = document.querySelector("#guessdisplay");
-
-
-
-
+let myvidOnclick = document.querySelector("#myvid");
+let randomImagesTwo;
 // Set variables
 
 /*Functions & EventHandlers*/
@@ -24,61 +22,89 @@ function addCounter(){
 
 
 //Fetch API
-async function Images(){
-    try{
-        let getCat = await  fetch(`https://pixabay.com/api/?key=${API_KEY}&category=people&pretty=true`);
-        let getData = await fetch(`https://pixabay.com/api/videos/?key=${API_KEY}&q=zoo+animals&pretty=true`);
-        let catJSON = await getCat.json();
-        let vidJSON = await getData.json();
+// async function Images(){
+//     try{
+//         let getCat = await  fetch(`https://pixabay.com/api/?key=${API_KEY}&category=people&pretty=true`);
+//         // let getData = await fetch(`https://pixabay.com/api/videos/?key=${API_KEY}&q=zoo+animals&pretty=true`);
+//         let catJSON = await getCat.json();
+//         // let vidJSON = await getData.json();
 
-        let imgdata = catJSON;
-        let viddata = vidJSON;
+//         var imgdata = catJSON;
+//         randomImagesTwo = imgdata.hits[i].webformatURL;
+//         // let viddata = vidJSON;
 
-        // let newdata = [...catdata, ...imgdata]; //merge APIs
+//         // console.log(imgdata.hits[0].webformatURL);
 
-        console.log("videos", viddata.hits[0].videos.tiny.url);
+//         // let newdata = [...catdata, ...imgdata]; //merge APIs
 
-        // console.log(catdata.hits[2].videos.tiny.url)
-        console.log("photos", imgdata.hits[2].webformatURL);
+//         // console.log("videos", viddata.hits[0].videos.tiny.url);
 
-        // newdata[1].hits[0].videos.tiny.url
+//         // console.log(catdata.hits[2].videos.tiny.url)
+//         // console.log("photos", imgdata.hits);
 
-        for(let y=0; y < viddata.length; y++){
-            console.log(viddata.hits[y].videos.tiny.url)
-        }
+//         // newdata[1].hits[0].videos.tiny.url
 
+//         // for(let y=0; y < viddata.length; y++){
+//         //     console.log(viddata.hits[y].videos.tiny.url)
+//         // }
         
-        for (let i = 0; i < imgdata.length; i++){
-            console.log(imgdata.hits[i].webformatURL);
-        }
-        
+//         for (var i = 0; i < imgdata.length; i++){
+//             console.log(imgdata.hits[i].webformatURL);
+//             return imgdata.hits[i].webformatURL;
+//         }
 
-    } catch(err){
-        console.log(err);
-    }
-}
-Images();
+//     } catch(err){
+//         console.log(err);
+//     }
+// };
 
-
-
-//On page load
+//Display images on page load
 function randomImages(){
-    let imageContainer = document.querySelector("#myvid");
     let pathToImage = `public/images/img/`;
     let createImg = document.createElement('img');
+    let yesTags = [["Support", "sit", "seat"], ["garden", "bee", "smell"], ["fast","horse", "drive"], ["oxygen", "green", "field"], ["zoo","mane", "chase"],["cute","cudly","carrot"],["technolog", "information","typing"]]
+    let gameTags = [];
 
-    for(let i = 1; i < 8; i++){
-        let imgChild = imageContainer.appendChild(createImg);
+    for(var i = 1; i < 8; i++){
+        let imgChild = myvidOnclick.appendChild(createImg);
         imgChild.src = `${pathToImage}${[i]}.jpg`;
         imgChild.setAttribute("class", "imageslider");
-        // imgChild.src++;
-        console.log(imgChild);
-    }
 
+        gameTags.push(yesTags[Math.floor(Math.random() * yesTags)])
+
+        if(i === "1.jpg"){
+            gameTags.push(yesTags[1]);
+        } else if (i === "2.jpg"){
+            gameTags.push(yesTags[6]);
+        } else if (i === "3.jpg"){
+            gameTags.push(yesTags[2]);
+        } else if (i === "4.jpg"){
+            gameTags.push(yesTags[5]);
+        } else if (i === "5.jpg"){
+            gameTags.push(yesTags[3]);
+        } else if (i === "6.jpg"){
+            gameTags.push(yesTags[4]);
+        } else if (i === "7.jpg"){
+            gameTags.push(yesTags[0]);
+        } else{
+            "There is no option"
+        }
+    }
 }
+
+function clues(){
+    playerTwo.addEventListener("click", ()=>{
+        if(playerTwo.textContent === "Clues"){
+            let tagDiv = document.createElement("div");
+            tagDiv.classList.add("tags");
+            button.textContent = tagDiv;
+        }
+    });
+}
+
 randomImages();
 
- //Handle the initial clicks
+ //Handle  other initial clicks
 function start(){
     //button opens up the modal
     clickStart.addEventListener("click", (event)=>{
@@ -89,22 +115,33 @@ function start(){
     }, false);
 }
 start();
+ 
 
+// Starting the game
 function onStart(){
     gameStart.addEventListener("click", ()=>{
-        let wordsArr = ["Am I alive", "Am I an animal", "Do I exist alone", "Can I be used", "Do I live in a zoo", "Can you spend me"]
+        let wordsArr = ["Support", "Sit", "Rest", "Relax", "Furniture", "Seat"]
         document.querySelector("#secondbutton").classList.add("green");
-        playerOne.textContent = "Your Turn";
-        playerTwo.textContent = "Your Computer";
+        playerOne.textContent = "This is your turn";
+        playerTwo.textContent = "Computer";
+        // randomImages();
         addCounter();
-        gameStart.textContent = "Pause Game";
+        // clues()
+        gameStart.textContent = "Next Clue";
+        myvidOnclick.classList.add("clickme");
 
         for (let i = 0; i < wordsArr.length; i++){
             guessDisplay.textContent = wordsArr[Math.floor(Math.random() * wordsArr.length)];
+        };
 
-        }
-        
+        // Loop over the API to display image(s)
     }, false);
 }
 onStart();
 
+//Adding winning blocks
+
+// function createBlocks(){
+//     document.createElement('div');
+
+// }
