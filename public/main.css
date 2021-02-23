@@ -96,7 +96,7 @@ div#myvid {
     height: 366px;
     left: 30%;
     top: 20px;
-    border: 1px solid rgb(44, 44, 44);
+    /* border: 1px solid rgb(44, 44, 44); */
     border-radius: 25px;
 }
 
@@ -111,14 +111,17 @@ div#myvid {
     height: 366px;
     left: 30%;
     top: 20px;
-    border: 1px solid rgb(44, 44, 44);
+    /* border: 1px solid rgb(44, 44, 44); */
     border-radius: 25px;
 }
 
 
 
 .imageslider{
-    width: 100%;
+    width: 87%;
+    position: relative;
+    left: 28%;
+    top: 20px;
     height: 366px;
     background-size: cover;
     object-fit: cover;
